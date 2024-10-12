@@ -1,7 +1,7 @@
 {
-  "name": "chai-backend",
+  "name": "chrome-extention",
   "version": "1.0.0",
-  "description": "a backend chai and code channel - youtube",
+  "description": "chrome extension chatgpt app",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
   "keywords": [
     "nodejs",
     "backend",
-    "youtube"
+    "chrome extension"
   ],
   "author": "roin roy",
   "license": "ISC",
@@ -19,15 +19,24 @@
     "prettier": "^3.3.3"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
-    "cloudinary": "^2.3.0",
+    "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
+    "express-session": "^1.18.0",
+    "googleapis": "^144.0.0",
+    "gridfs-stream": "^1.1.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.5.1",
+    "mongoose": "^8.7.0",
     "mongoose-aggregate-paginate-v2": "^1.1.2",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "openai": "^4.67.3",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "tesseract.js": "^5.1.1"
   }
 }

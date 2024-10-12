@@ -1,0 +1,35 @@
+
+  [
+    {
+    "firstname": "Robin",
+    "lastname": "Roy",
+    "password": "1234",
+    "email":"robin@gmail.com",
+    "phoneNo":45252542,
+    "role": "user"
+  },
+  {
+    "firstname": "Robin",
+    "lastname": "Roy",
+    "password": "1234",
+    "email":"robin@gmail.com",
+    "phoneNo":45252542,
+    "role": "user"
+  },
+  {
+    "firstname": "Robin",
+    "lastname": "Roy",
+    "password": "1234",
+    "email":"robin@gmail.com",
+    "phoneNo":45252542,
+    "role": "user"
+  },
+  {
+    "firstname": "Robin",
+    "lastname": "Roy",
+    "password": "1234",
+    "email":"robin@gmail.com",
+    "phoneNo":45252542,
+    "role": "user"
+  }
+]

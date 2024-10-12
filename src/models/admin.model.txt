@@ -8,61 +8,48 @@ configDotenv({path:"./.env"});
 
 const userSchema = new mongoose.Schema(
     {
-        // username: {
-        //     type: String,
-        //     required: function () {
-        //         return !this.googleId; // Password is only required if user is not using Google login
-        //       },
-        //     unique: true,
-        //     losercase: true,
-        //     trim: true,
-        //     index: true
-        // },
-        firstname:{
-            type:String,
-            required:true,
-        },
-        lastname:{
-            type:String,
-            required:true,
+        userName: {
+            type: String,
+            required: true,
+            unique: true,
+            losercase: true,
+            trim: true,
+            index: true
         },
         email: {
             type: String,
             required: true,
-            // unique: true,
+            unique: true,
             losercase: true,
             trim: true,
         },
-        phoneNo:{
-            type:String,
+        fullName: {
+            type: String,
+            required: true,
+            trim: true,
+            index: true
+        },
+        avatar: {
+            type: String, //cloudinary url
+            required:true
+        },
+        coverImage: {
+            type: String, //cloudinary url
+
+        },
+        watchHistory:{
+            type:Schema.Types.ObjectId,
+            ref:"Video"
         },
         password:{
             type:String,
-            required: function () {
-                return !this.googleId; // Password is only required if user is not using Google login
-              },
-        },
-        googleId: {
-            type: String, // Store Google ID for users who log in via Google
-            unique: true,
-            sparse: true, // Allows for either regular login or Google login without a conflict
-          },
-        role:{
-            type:String,
-            required:true,
-            enum:['user','admin'],
-            default:'user'        
-        },
-        isActive:{
-            type:Boolean,
-            default:true,
+            required:[true,"Password is required!"]
         },
         refreshToken:{
             type:String
         }
 
     },{timestamps:true}
-
 )
 
 
@@ -96,8 +83,9 @@ userSchema.methods.generateAccessToken =  function(){
   return   jwt.sign(
         {
             _id:this._id,
-            role:this.role,
-            username:this.username,
+            email:this.email,
+            userName:this.userName,
+            fullName:this.fullName
         },
          process.env.ACCESS_TOKEN_SECRET,
         {
@@ -141,4 +129,4 @@ return jwt.sign(
 
 
 //exporting user 
-export const User = mongoose.model("User", userSchema);
+export const User = mongoose.model("user", userSchema);

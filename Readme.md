@@ -1,3 +1,3 @@
-# chai and backend series
+# chat gpt chrome extension
 
 learning backend nodejs mern
